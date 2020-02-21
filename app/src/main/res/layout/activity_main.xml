@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint=" # # # #"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textColorHint="@color/colorPrimary"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:onClick="btnCheck"
+        android:text="Check Now"
+        android:visibility="invisible" />
+
+    <TextView
+
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_input"
+        android:layout_margin="8dp"
+        android:text="The computer only considers a number from 1 to 1000."
+        android:visibility="gone" />
+
+
+</RelativeLayout>
