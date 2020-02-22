@@ -1,41 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
+    android:background="@color/colorLight"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/et_input"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:hint=" # # # #"
-        android:inputType="number"
-        android:maxLength="4"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="22sp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_check"
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="21dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="The computer only considers a number from 1 to 1000."
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:elevation="50dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_arrow_up"
+                android:layout_width="38dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:elevation="24dp"
+                android:visibility="invisible"/>
+
+            <EditText
+                android:id="@+id/et_input"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@android:color/white"
+
+                android:gravity="center"
+                android:hint="# # # #"
+                android:inputType="number"
+                android:maxLength="4"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColorHint="@color/darkGrey"
+                android:textSize="48sp" />
+
+            <ImageView
+                android:id="@+id/img_arrow_down"
+                android:layout_width="38dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="20dp"
-        android:onClick="btnCheck"
-        android:text="Check Now"
-        android:visibility="invisible" />
-
-    <TextView
-
-        android:id="@+id/tv_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_input"
-        android:layout_margin="8dp"
-        android:text="The computer only considers a number from 1 to 1000."
-        android:visibility="gone" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/btn_check"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:background="@drawable/bg_button"
+            android:onClick="btnCheck"
+            android:text="Check"
+            android:textAllCaps="false"
+            android:textColor="@color/colorLight"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_mood"
+            android:layout_width="72dp"
+            android:layout_height="59dp"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+</LinearLayout>
