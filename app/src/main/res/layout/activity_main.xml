@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
     android:background="@color/colorLight"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -40,7 +39,8 @@
                 android:layout_height="25dp"
                 android:layout_gravity="center"
                 android:elevation="24dp"
-                android:visibility="invisible"/>
+                android:onClick="btnUp"
+                android:visibility="invisible" />
 
             <EditText
                 android:id="@+id/et_input"
@@ -50,7 +50,6 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@android:color/white"
-
                 android:gravity="center"
                 android:hint="# # # #"
                 android:inputType="number"
@@ -60,19 +59,36 @@
                 android:textColorHint="@color/darkGrey"
                 android:textSize="48sp" />
 
+            <TextView
+                android:id="@+id/tv_final_display"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorLight"
+                android:gravity="center"
+                android:maxLength="4"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColorHint="@color/darkGrey"
+                android:textSize="48sp"
+                android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/img_arrow_down"
                 android:layout_width="38dp"
                 android:layout_height="25dp"
                 android:layout_gravity="center"
-                android:visibility="invisible"/>
+                android:onClick="btnDown"
+                android:visibility="invisible" />
 
         </LinearLayout>
 
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -83,6 +99,7 @@
             android:id="@+id/btn_check"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android:layout_margin="20dp"
             android:background="@drawable/bg_button"
@@ -97,9 +114,22 @@
             android:id="@+id/img_mood"
             android:layout_width="72dp"
             android:layout_height="59dp"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_restart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/img_mood"
+            android:gravity="center"
+            android:onClick="btnRestart"
+            android:text="Restart"
+            android:textColor="@color/colorPrimaryDark"
             android:visibility="gone" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 </LinearLayout>
